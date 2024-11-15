@@ -22,4 +22,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.yashwant}}/nginx
+          tags: ${{ secrets.yashwant}}/project
