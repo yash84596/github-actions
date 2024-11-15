@@ -15,11 +15,11 @@ jobs:
         name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.GANIKET}}
-          password: ${{ secrets.GANIKET }}
+          username: ${{ secrets.yashwant}}
+          password: ${{ secrets.Ganiket}}
       -
         name: Build and push
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.GANIKET}}/kucl22:actions
+          tags: ${{ secrets.yashwant}}/kucl22:actions
