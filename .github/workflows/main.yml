@@ -1,4 +1,4 @@
-name: Docker CI Learning - KUCL 
+name: Docker CI Learning - KUCL2
 on:
   push:
 jobs:
