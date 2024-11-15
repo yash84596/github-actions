@@ -1,6 +1,9 @@
-FROM docker.io/centos:7
+# Use the official NGINX image as the base image
+FROM nginx:latest
 
-RUN yum install httpd -y
-COPY ./index.html /var/www/html/
+# Copy custom configuration file into the container
+# Uncomment the next line to use a custom nginx.conf file
+# COPY ./nginx.conf /etc/nginx/nginx.conf
 
-
+# Copy website files (HTML, CSS, JS) to the NGINX web root
+COPY ./html /usr/share/nginx/html
