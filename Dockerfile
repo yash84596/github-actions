@@ -6,4 +6,4 @@ FROM nginx:latest
 # COPY ./nginx.conf /etc/nginx/nginx.conf
 
 # Copy website files (HTML, CSS, JS) to the NGINX web root
-COPY ./html /usr/share/nginx/html
+COPY ./index.html /usr/share/nginx/html
