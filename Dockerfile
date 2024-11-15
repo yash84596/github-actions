@@ -1,14 +1,6 @@
-# Pull the minimal Ubuntu image
-FROM ubuntu
+FROM docker.io/centos:7
 
-# Install Nginx
-RUN apt-get -y update && apt-get -y install nginx
+RUN yum install httpd -y
+COPY index.html /var/www/html/
 
-# Copy the Nginx config
-COPY default /etc/nginx/sites-available/default
-
-# Expose the port for access
-EXPOSE 80/tcp
-
-# Run the Nginx server
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
