@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    runs-on: 
     steps:
       -
         name: Set up QEMU test
