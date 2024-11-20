@@ -1,6 +1,7 @@
 name: Docker CI Learning - KUCL2
 on:
   push:
+
 jobs:
   docker-job:
     runs-on: aniket22
@@ -22,3 +23,11 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.YASHWANT }}/nginx:githubactions
+
+  deploy:
+    needs: docker-job # Correct job name here
+    name: Deploy image
+    runs-on: kucl22 # Fixed the syntax; "runs-on" does not require "labels"
+    steps:
+      - name: Connect and pull
+        run: ssh ${{ secrets.S_USER }}@${{ secrets.D_HOST }} "docker run -d ${{ secrets.DOCKERHUB_USERNAME }}/kucl22:actions"
