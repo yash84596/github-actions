@@ -30,4 +30,4 @@ jobs:
     runs-on: kucl22 # Fixed the syntax; "runs-on" does not require "labels"
     steps:
       - name: Connect and pull
-        run: ssh ${{ secrets.S_USER }}@${{ secrets.D_HOST }} "docker run -d ${{ secrets.DOCKERHUB_USERNAME }}/kucl22:actions"
+        run: ssh ${{ secrets.S_USER }}@${{ secrets.D_HOST }} "docker run -d ${{ secrets.YASHWANT}}/kucl22:actions"
